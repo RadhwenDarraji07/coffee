@@ -47,7 +47,7 @@ export default function ProductList() {
           <div className="flex lg:flex-1">
             <a href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
-              <img alt="" src="https://img.pikbest.com/origin/09/70/06/222pIkbEsTrCh.jpg!sw800" className="h-8 w-auto" />
+              <p>🎀 𝒲𝒽𝓎 𝓃♡𝓉 🎀</p>
             </a>
           </div>
           <div className="flex lg:hidden">
@@ -200,10 +200,10 @@ export default function ProductList() {
         <div className="max-w-7xl mx-auto text-left">
           <h2 className="text-2xl font-bold mb-4">Why not try your daily dose of coffee bliss.</h2>
           <p className="text-lg mb-4">
-            At Coffee Space, we believe in the magic of a great cup of coffee and the joy it brings
+          𝘈𝘵 𝘊𝘰𝘧𝘧𝘦𝘦 𝘚𝘱𝘢𝘤𝘦, 𝘸𝘦 𝘣𝘦𝘭𝘪𝘦𝘷𝘦 𝘪𝘯 𝘵𝘩𝘦 𝘮𝘢𝘨𝘪𝘤 𝘰𝘧 𝘢 𝘨𝘳𝘦𝘢𝘵 𝘤𝘶𝘱 𝘰𝘧 𝘤𝘰𝘧𝘧𝘦𝘦 𝘢𝘯𝘥 𝘵𝘩𝘦 𝘫𝘰𝘺 𝘪𝘵 𝘣𝘳𝘪𝘯𝘨𝘴
           </p>
           <p className="text-lg mb-8">
-            Nestled in the heart of Siliana
+          𝘕𝘦𝘴𝘵𝘭𝘦𝘥 𝘪𝘯 𝘵𝘩𝘦 𝘩𝘦𝘢𝘳𝘵 𝘰𝘧 𝘚𝘪𝘭𝘪𝘢𝘯𝘢
           </p>
         </div>
         <div className="absolute right-20 bottom-0 top-20 transform translate-x-1/5 w-[25%]">
