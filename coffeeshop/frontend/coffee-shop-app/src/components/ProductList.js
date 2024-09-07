@@ -21,6 +21,8 @@ import {
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
 
+// Import the image
+import coffeeImage from '../assets/images/coffeehere.png'
 
 const products = [
   { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '/', icon: ChartPieIcon },
@@ -193,19 +195,47 @@ export default function ProductList() {
           </DialogPanel>
         </Dialog>
       </header>
-      {/* New section with text */}
-      <section className="bg-[#684631] text-white py-16 px-6">
-        <div className="max-w-7xl mx-auto text-left" >
+      {/* New section with text and animated image */}
+      <section className="bg-[#684631] text-white py-16 px-6 relative">
+        <div className="max-w-7xl mx-auto text-left">
           <h2 className="text-2xl font-bold mb-4">Why not try your daily dose of coffee bliss.</h2>
-          <p className="text-lg">
-          At Coffee Space, we believe in the magic of a great cup of coffee and the joy it brings 
+          <p className="text-lg mb-4">
+            At Coffee Space, we believe in the magic of a great cup of coffee and the joy it brings
           </p>
-          <p className="text-lg">
-          Nestled in the heart of Siliana 
+          <p className="text-lg mb-8">
+            Nestled in the heart of Siliana
           </p>
         </div>
-       
+        <div className="absolute right-20 bottom-0 top-20 transform translate-x-1/5 w-[25%]">
+          <img
+            src={coffeeImage}
+            alt="Coffee"
+            className="w-full h-auto transition-transform duration-500 ease-in-out transform hover:scale-110 hover:rotate-3 animate-bounceIn"
+          />
+        </div>
       </section>
+
+      <style>
+        {`
+          @keyframes bounceIn {
+            0% {
+              opacity: 0;
+              transform: scale(0.5);
+            }
+            50% {
+              opacity: 1;
+              transform: scale(1.2);
+            }
+            100% {
+              opacity: 1;
+              transform: scale(1);
+            }
+          }
+          .animate-bounceIn {
+            animation: bounceIn 1s ease-out;
+          }
+        `}
+      </style>
     </>
   )
 }
