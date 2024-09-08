@@ -4,11 +4,6 @@ import {
   DialogPanel,
   Disclosure,
   DisclosureButton,
-  DisclosurePanel,
-  Popover,
-  PopoverButton,
-  PopoverGroup,
-  PopoverPanel,
 } from '@headlessui/react'
 import {
   ArrowPathIcon,
@@ -60,51 +55,10 @@ export default function ProductList() {
               <Bars3Icon aria-hidden="true" className="h-6 w-6" />
             </button>
           </div>
-          <PopoverGroup className="hidden lg:flex lg:gap-x-12">
-            <Popover className="relative">
-              <PopoverButton className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
-                Product
-                <ChevronDownIcon aria-hidden="true" className="h-5 w-5 flex-none text-gray-400" />
-              </PopoverButton>
-
-              <PopoverPanel
-                transition
-                className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5"
-              >
-                <div className="p-4">
-                  {products.map((item) => (
-                    <div
-                      key={item.name}
-                      className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
-                    >
-                      <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                        <item.icon aria-hidden="true" className="h-6 w-6 text-gray-600 group-hover:text-indigo-600" />
-                      </div>
-                      <div className="flex-auto">
-                        <a href={item.href} className="block font-semibold text-gray-900">
-                          {item.name}
-                          <span className="absolute inset-0" />
-                        </a>
-                        <p className="mt-1 text-gray-600">{item.description}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
-                  {callsToAction.map((item) => (
-                    <a
-                      key={item.name}
-                      href={item.href}
-                      className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
-                    >
-                      <item.icon aria-hidden="true" className="h-5 w-5 flex-none text-gray-400" />
-                      {item.name}
-                    </a>
-                  ))}
-                </div>
-              </PopoverPanel>
-            </Popover>
-
+          <div className="hidden lg:flex lg:gap-x-12">
+            <a href="/prods" className="text-sm font-semibold leading-6 text-gray-900">
+              Products
+            </a>
             <a href="/" className="text-sm font-semibold leading-6 text-gray-900">
               Features
             </a>
@@ -114,7 +68,7 @@ export default function ProductList() {
             <a href="/" className="text-sm font-semibold leading-6 text-gray-900">
               Company
             </a>
-          </PopoverGroup>
+          </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <a href="/" className="text-sm font-semibold leading-6 text-gray-900">
               Log in <span aria-hidden="true">&rarr;</span>
@@ -145,24 +99,12 @@ export default function ProductList() {
             <div className="mt-6 flow-root">
               <div className="-my-6 divide-y divide-gray-500/10">
                 <div className="space-y-2 py-6">
-                  <Disclosure as="div" className="-mx-3">
-                    <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
-                      Product
-                      <ChevronDownIcon aria-hidden="true" className="h-5 w-5 flex-none group-data-[open]:rotate-180" />
-                    </DisclosureButton>
-                    <DisclosurePanel className="mt-2 space-y-2">
-                      {[...products, ...callsToAction].map((item) => (
-                        <DisclosureButton
-                          key={item.name}
-                          as="a"
-                          href={item.href}
-                          className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                        >
-                          {item.name}
-                        </DisclosureButton>
-                      ))}
-                    </DisclosurePanel>
-                  </Disclosure>
+                  <a
+                    href="/prods"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  >
+                    Products
+                  </a>
                   <a
                     href="/"
                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
@@ -200,10 +142,10 @@ export default function ProductList() {
         <div className="max-w-7xl mx-auto text-left">
           <h2 className="text-2xl font-bold mb-4">Why not try your daily dose of coffee bliss.</h2>
           <p className="text-lg mb-4">
-          𝘈𝘵 𝘊𝘰𝘧𝘧𝘦𝘦 𝘚𝘱𝘢𝘤𝘦, 𝘸𝘦 𝘣𝘦𝘭𝘪𝘦𝘷𝘦 𝘪𝘯 𝘵𝘩𝘦 𝘮𝘢𝘨𝘪𝘤 𝘰𝘧 𝘢 𝘨𝘳𝘦𝘢𝘵 𝘤𝘶𝘱 𝘰𝘧 𝘤𝘰𝘧𝘧𝘦𝘦 𝘢𝘯𝘥 𝘵𝘩𝘦 𝘫𝘰𝘺 𝘪𝘵 𝘣𝘳𝘪𝘯𝘨𝘴
+            𝘈𝘵 𝘊𝘰𝘧𝘧𝘦𝘦 𝘚𝘱𝘢𝘤𝘦, 𝘸𝘦 𝘣𝘦𝘭𝘪𝘦𝘃𝘦 𝘪𝘯 𝘵𝘩𝘦 𝘮𝘢𝘨𝘪𝘤 𝘰𝘧 𝘢 𝘨𝘳𝘦𝘢𝘵 𝘤𝘶𝘱 𝘰𝘧 𝘤𝘰𝘧𝘧𝘦𝘦 𝘢𝘯𝘥 𝘵𝘩𝘦 𝘫𝘰𝘺 𝘪𝘵 𝘣𝘳𝘪𝘯𝘨𝘴
           </p>
           <p className="text-lg mb-8">
-          𝘕𝘦𝘴𝘵𝘭𝘦𝘥 𝘪𝘯 𝘵𝘩𝘦 𝘩𝘦𝘢𝘳𝘵 𝘰𝘧 𝘚𝘪𝘭𝘪𝘢𝘯𝘢
+            𝘕𝘦𝘴𝘵𝘭𝘦𝘥 𝘪𝘯 𝘵𝘩𝘦 𝘩𝘦𝘢𝘳𝘵 𝘰𝘧 𝘚𝘪𝘭𝘪𝘢𝘯𝘢
           </p>
         </div>
         <div className="absolute right-20 bottom-0 top-20 transform translate-x-1/5 w-[25%]">
@@ -214,44 +156,20 @@ export default function ProductList() {
           />
         </div>
         <div className="relative">
-  <input 
-    type="text" 
-    placeholder="Enter your email here" 
-    className="p-3 rounded-md text-gray-900 absolute left-20 top-40" 
-  />
-</div>
-<button
-  type="button"
-  className="text-white bg-yellow-700 hover:bg-yellow-800 focus:ring-2 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-3 me-10 mb-2 dark:bg-yellow-600 dark:hover:bg-yellow-700 focus:outline-none dark:focus:ring-yellow-800"
-  style={{ marginTop: '162px', marginRight:'770px' }}
->
-  Get your Card
-</button>
+          <input 
+            type="text" 
+            placeholder="Enter your email here" 
+            className="p-3 rounded-md text-gray-900 absolute left-20 top-40" 
+          />
+        </div>
+        <button
+          type="button"
+          className="text-white bg-yellow-700 hover:bg-yellow-800 focus:ring-2 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-3 me-10 mb-2 dark:bg-yellow-600 dark:hover:bg-yellow-700 focus:outline-none dark:focus:ring-yellow-800"
+          style={{ marginTop: '162px', marginRight: '770px' }}
+        >
+          Get your Card
+        </button>
       </section>
-
-      <style>
-        {`
-          @keyframes bounceIn {
-            0% {
-              opacity: 0;
-              transform: scale(0.5);
-            }
-            50% {
-              opacity: 1;
-              transform: scale(1.2);
-            }
-            100% {
-              opacity: 1;
-              transform: scale(1);
-            }
-          }
-          .animate-bounceIn {
-            animation: bounceIn 1s ease-out;
-          }
-        `}
-      </style>
-      
     </>
-    
   )
 }
